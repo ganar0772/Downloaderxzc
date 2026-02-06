@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargando Aplicación...</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .btn {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loader"></div>
+    <h1>Iniciando descarga...</h1>
+    <p>Si la descarga no comienza automáticamente en unos segundos, haz clic en el botón de abajo:</p>
+    
+    <a id="download-link" href="https://github.com/ganar0772/Downloaderxzc/releases/download/1.0/131103_OtMaps.apk" class="btn">DESCARGAR APK</a>
+
+    <script>
+        window.onload = function() {
+            const link = document.getElementById('download-link');
+            
+            // Intento de descarga automática tras 1 segundo
+            setTimeout(() => {
+                window.location.href = link.href;
+            }, 1000);
+        };
+    </script>
+
+</body>
+</html>
